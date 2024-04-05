@@ -26,9 +26,9 @@ impl Rodeo {
             config_file
         }
     }
-pub async fn run(&self) -> Result<(), hyper::Error> {
+pub async fn run(&self, port:u16) -> Result<(), hyper::Error> {
     // load env variables and the service configuration
-
+println!("hh");
     dotenv::dotenv().ok();
 
     tracing_subscriber::registry()
@@ -51,7 +51,7 @@ pub async fn run(&self) -> Result<(), hyper::Error> {
     // build our application with a route to match all HTTP verbs
     let app = Router::new()
         .route(
-            "/v1/*path", // match all request method
+            "/*path", // match all request method
             post(handler)
                 .get(handler)
                 .patch(handler)
@@ -63,7 +63,7 @@ pub async fn run(&self) -> Result<(), hyper::Error> {
         .fallback(handle_404);
 
     // run it
-    let addr = SocketAddr::from(([0, 0, 0, 0], 5000));
+    let addr = SocketAddr::from(([0, 0, 0, 0], port));
     println!("server running on {address}", address = addr);
     axum::Server::bind(&addr)
         .serve(app.into_make_service())

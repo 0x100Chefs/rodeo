@@ -1,5 +1,5 @@
-use crate::errors::Error;
-use std::fmt::format;
+
+
 use serde::{Deserialize, Serialize};
 use toml::Table;
 use std::fs::File;
@@ -37,7 +37,6 @@ timeout = '10s'
 [services]
 auth = {path = "auth", base_url = "http://0.0.0.0:5001/v1"}
 admin = {path = "admin", base_url = "http://0.0.0.0:5002/v2"}
-
         "#).unwrap();
     }
 

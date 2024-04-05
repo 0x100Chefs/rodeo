@@ -1,0 +1,15 @@
+{
+  "port": "5000",
+  "time_out": "10s",
+  "services": [
+    {
+      "base_url": "0.0.0.0:5001/v1",
+      "path" : "/auth"
+    },
+    {
+      "base_url": "0.0.0.0:5002/admin",
+      "path" : "/admin"
+    }
+  ]
+}
+        
