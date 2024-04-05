@@ -6,17 +6,22 @@ pub struct Error {
 }
 
 impl Error {
-    pub fn new(message: &str) -> Self {
-        Self {
-            message: message.to_string(),
-        }
+    pub fn new(message: &str) -> String {
+        let error_style = Style::new().for_stderr().red();
+        format!("{}", error_style.apply_to(message))
     }
-    pub fn missing_config(&self) {
+
+    pub fn _log(message: &str) -> () {
+        let error_style = Style::new().for_stderr().red();
+        println!("{}", error_style.apply_to(message));
+    }
+
+    pub fn _missing_config(&self) {
         let error_style = Style::new().for_stderr().red();
         println!("{}", error_style.apply_to(&self.message));
     }
 
-    pub fn invalid_config_type(&self) {
+    pub fn _invalid_config_type(&self) {
         let error_style = Style::new().for_stderr().red();
         println!("{}", error_style.apply_to(&self.message));
     }
