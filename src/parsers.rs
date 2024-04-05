@@ -51,16 +51,16 @@ admin = {path = "admin", base_url = "http://0.0.0.0:5002/v2"}
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Service {
     name: String,
-    version: String,
+    // version: String,
     pub base_url: String,
 }
 
 impl Service {
-    pub fn new(name: &str, base_url: &str, version: &str) -> Self {
+    pub fn new(name: &str, base_url: &str) -> Self {
         Self {
             name: name.to_string(),
             base_url: base_url.to_string(),
-            version: version.to_string(),
+            // version: version.to_string(),
         }
     }
 }
@@ -72,7 +72,6 @@ pub fn parse_config(service_id: &str, config_file: PathBuf) -> Result<Service, S
     // println!("{:?}", config);
     //  convert the file into Table destructure provided by Toml parser
     let config = config.parse::<Table>().unwrap();
-    println!("{:?}", config);
 
     let Some(service) = &config["services"].get(service_id) else {
         return Err(String::from("error parsing config"));
@@ -80,8 +79,8 @@ pub fn parse_config(service_id: &str, config_file: PathBuf) -> Result<Service, S
 
     // convert to Services Struct
     let name = service_id;
-    let version = format!("v{}", service.get("version").unwrap().as_str().unwrap());
+    // let version = format!("v{}", service.get("version").unwrap().as_str().unwrap());
     let base_url = service.get("base_url").unwrap().as_str().unwrap();
 
-    Ok(Service::new(name, base_url, &version))
+    Ok(Service::new(name, base_url, ))
 }

@@ -1,7 +1,8 @@
 [package]
 edition = "2021"
 name = "proxy"
-version = "0.1.0"
+version = "0.3.0"
+description = "Configurable HTTP reverse proxy server"
 
 [dependencies]
 anyhow = "1.0.81"
