@@ -1,0 +1,6 @@
+port = 5000
+timeout = '10s'
+
+[services]
+nvt = {path = "nvt", base_url = "http://127.0.0.1:8000/api/"}
+        

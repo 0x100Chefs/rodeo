@@ -3,6 +3,6 @@ port = 5000
 timeout = '10s'
 
 [services]
-admin = {version = "1", base_url = "http://0.0.0.0:5003"}
+nvt = {version = "1", base_url = "http://0.0.0.0:8000/"}
 auth = {version = "1", base_url = "http://0.0.0.0:5001/"}
 student = {version = "1", base_url = "http://0.0.0.0:5002"}
