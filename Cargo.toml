@@ -4,7 +4,7 @@ name = "rodeo"
 version = "1.0.0"
 description = "Configurable HTTP reverse proxy server with CORS bypass"
 authors = ["Adeoye Adefemi <adefemiadeoye@yahoo.com>"]
-
+license = "GPL-3.0"
 [dependencies]
 anyhow = "1.0.81"
 axum = { version = "0.6.20", features = ["headers", "tracing", "macros"] }
