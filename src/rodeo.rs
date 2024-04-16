@@ -63,7 +63,7 @@ impl Rodeo {
             Method::DELETE,
             Method::PUT,
             Method::PATCH,
-        ]); // restrict methods
+        ]).allow_origin(Any); // restrict methods
 
         // build our application with a route to match all HTTP verbs
         let app = Router::new()

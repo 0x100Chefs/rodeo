@@ -1,74 +1,42 @@
- # Martus Proxy Server
+# Rodeo 🦌
+
+![rodeo](./rodeo.jpeg)
+
+Rodeo is a simple HTTP reverse proxy server that can be used to bypass [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) and route incoming HTTP requests to different servers based on the request path
 
 - [Description](#description)
 - [Getting Started](#getting-started)
-  - [Dependencies](#dependencies)
-  - [Installing](#installing)
-  - [Executing program](#executing-program)
-- [Documentation](#documentation)
-- [Help](#help)
-- [Authors](#authors)
-- [Version History](#version-history)
+- [Installing](#installing)
+- [Executing program](#executing-program)
 - [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 ## Description
 
-HTTP reverse proxy server
+Rodeo is a straightforward yet powerful HTTP reverse proxy server designed to circumvent Cross-Origin Resource Sharing (CORS) restrictions. Its primary function is to intercept incoming HTTP requests and efficiently route them to various servers based on the specific request path. By doing so, Rodeo enables seamless communication between client-side applications and backend servers, regardless of their origin or domain.
 
-## Getting Started
+## Installation
 
-### Dependencies
+Rodeo is currently available as a pre-built binary for Linux and macOS. To install Rodeo, simply download the appropriate binary for your operating system and architecture from the [releases page](https://github.com/rodeo/release)
 
-- Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-- ex. Windows 10
+## Executing program
 
-### Installing
+Get started by creating a new configuration file using the following command:
 
-- How/where to download your program
-- Any modifications needed to be made to files/folders
-
-### Executing program
-
-- How to run the program
-- Step-by-step bullets
-
+```sh
+rodeo init <config-file-type>
+# rodeo init json
 ```
-code blocks for commands
+The config-file-type can be either `json` or `toml`. This command will generate a new configuration file in the current directory with the default settings. You can then modify the configuration file to suit your needs.
+
+Once you have created a configuration file, you can start the Rodeo server by running the following command:
+
+```sh
+rodeo run -c rodeo.<config-file-type>
+# rodeo run -c rodeo.json
 ```
-
-## Documentation
-
-Describe any special instructions that are necessary to install a software package on your computer (if applicable).
-
-## Help
-
-Any advise for common problems or issues.
-
-```
-command to run if program contains helper info
-```
-
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-- 0.2
-  - Various bug fixes and optimizations
-  - See [commit change]() or See [release history]()
-- 0.1
-  - Initial Release
 
 ## License
 
 This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
 
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-        
+```

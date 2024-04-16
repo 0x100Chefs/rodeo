@@ -1,8 +1,9 @@
 [package]
 edition = "2021"
-name = "proxy"
-version = "0.3.0"
-description = "Configurable HTTP reverse proxy server"
+name = "rodeo"
+version = "1.0.0"
+description = "Configurable HTTP reverse proxy server with CORS bypass"
+authors = ["Adeoye Adefemi <adefemiadeoye@yahoo.com>"]
 
 [dependencies]
 anyhow = "1.0.81"
